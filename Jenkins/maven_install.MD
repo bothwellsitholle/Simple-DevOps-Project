@@ -18,7 +18,11 @@ Maven is a code build tool which used to convert your code to an artifact. this 
      wget https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
      tar -xvzf apache-maven-3.6.1-bin.tar.gz
      ```
-	
+     
+     - Remame package
+     
+     mv apache-maven-3.8.4-bin.tar.gz  maven
+
 1. Setup M2_HOME and M2 paths in .bash_profile of the user and add these to the path variable
    ```sh
    vi ~/.bash_profile
