@@ -23,6 +23,8 @@ Jenkins is a self-contained Java-based program, ready to run out-of-the-box, wit
    find /usr/lib/jvm/java-1.8* | head -n 3
    
    JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.302.b08-0.amzn2.0.1.x86_64
+   
+   vi .bash_profile
 
 ![Screenshot 2021-11-28 at 13 09 17](https://user-images.githubusercontent.com/74501421/143765358-5777dfa9-7ee8-4360-888e-aafe0deaeef9.png)
 
@@ -66,7 +68,9 @@ Jenkins is a self-contained Java-based program, ready to run out-of-the-box, wit
 - Change admin password
    - `Admin` > `Configure` > `Password`
 - Configure `java` path
-  - `Manage Jenkins` > `Global Tool Configuration` > `JDK`  
+  - `Manage Jenkins` > `Global Tool Configuration` > `JDK` 
+  - echo $JAVA_HOME
+  - Add JAVA_HOME and path echoed 
 - Create another admin user id
 
 ### Test Jenkins Jobs
