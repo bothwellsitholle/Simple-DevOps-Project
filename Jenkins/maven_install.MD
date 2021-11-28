@@ -46,3 +46,10 @@ So far we have completed the installation of maven software to support maven plu
 2. Configure maven path
   - `Manage Jenkins` > `Global Tool Configuration` > `Maven`
 
+3. Build a maven job
+  - select maven > Source Code Management `Git` enter repo name > Goals and options `Goals and options`
+  - You can see the built artifact in /var/lib/jenkins/workspace/
+
+
+
+
