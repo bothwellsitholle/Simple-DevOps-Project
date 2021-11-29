@@ -86,6 +86,8 @@ Please follow below steps to install docker CE on CentoOS server instance. For R
 
    - docker rm 9115cfe4fdbd
 
+   - docker exec -it tomcat-container /bin/bash
+
    
    If you encount issue login in the docker container
    
@@ -107,6 +109,7 @@ Please follow below steps to install docker CE on CentoOS server instance. For R
    - install a plugin in jenkins called "publish over ssh"
    - Create user as above
    - Go to jenkins configurations under publish over ssh add your hostname and password and test connections
+   - Under post post build add and select send build artifacts over ssh and add this path webapp/target/*.war to sorce target.
    - edit /etc/ssh/sshd_config to allow PasswordBasedAuthentication and reload by using this command  service sshd reload
    
    ```
