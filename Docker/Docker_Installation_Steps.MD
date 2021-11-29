@@ -69,4 +69,44 @@ Please follow below steps to install docker CE on CentoOS server instance. For R
 1. Verify that docker is installed correctly by running the hello-world image.
    ```sh
    sudo docker run hello-world
+   
+   
+   
+  2. DOCKR COMMANDS
+   
+   - docker ps -a
+
+   - docker image ls
+
+   - docker pull tomcat. / docker pull tomcat:latest
+
+   - docker run --name tomcat-container -p 8080:8080 tomcat:latest
+                     Or
+   - docker run -d --name tomcat-container -p 8080:8080 tomcat:latest
+
+   - docker rm 9115cfe4fdbd
+
+   
+   If you encount issue login in the docker container
+   
+   - install a lower version of tomcat image eh tomcat:8.0 or do the following:
+   
+   docker run -d --name tomcat-container -p 8080:8080 tomcat:latest
+   
+   copy content in webapps.dist to webapps: webapps by default is empty an thats where our app should run from.
+   
+   - hAdd new port 8081. 
+   copy content in webapps.dist to webapps: webapps by default is empty an thats where our app should run from.under security group      in EC2 instance
+   
+   docker run -d --name tomcat-8 -p 8081:8080 tomcat:8.0
+   
+   
+   
+   3. INTERGATING DOCKER IN JENKINS.
+
+   - install a plugin in jenkins called "publish over ssh"
+   - Create user as above
+   - Go to jenkins configurations under publish over ssh add your hostname and password and test connections
+   - edit /etc/ssh/sshd_config to allow PasswordBasedAuthentication and reload by using this command  service sshd reload
+   
    ```
