@@ -9,9 +9,9 @@
     sudo apt install unzip python
     unzip awscli-bundle.zip
     #sudo apt-get install unzip - if you dont have unzip in your system
-     Might need to upgrade python use below commands
     ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
     
+    If you need to upgrade python use below commands:
     
       # Remove python2
       sudo apt purge -y python2.7-minimal
