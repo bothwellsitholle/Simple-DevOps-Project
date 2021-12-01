@@ -67,22 +67,29 @@
 1. create an S3 bucket
    ```sh
     aws s3 mb s3://bothwell.k8s.valaxy.net
+    or
+    aws s3 mb s3://bill.k8s.valaxy.net
    ```
 1. Expose environment variable:
    ```sh
     export KOPS_STATE_STORE=s3://bothwell.k8s.valaxy.net
+    or
+    export KOPS_STATE_STORE=s3://bill.k8s.valaxy.net
    ```
 
 1. Create sshkeys before creating cluster
    ```sh
-    ssh-keygen
+    
+    
     
    
    ```
 
 1. Create kubernetes cluster definitions on S3 bucket
    ```sh
-   kops create cluster --cloud=aws --zones=ap-south-1b --name=bothwell.k8s.valaxy.net --dns-zone=valaxy.net --dns private 
+   kops create cluster --cloud=aws --zones=us-east-2a --name=bothwell.k8s.valaxy.net --dns-zone=valaxy.net --dns private 
+   or
+   kops create cluster --cloud=aws --zones=us-east-2a --name=bill.k8s.valaxy.net --dns-zone=valaxy.net --dns private 
     ```
 
 1. If you wish to update the cluster worker node sizes use below command 
