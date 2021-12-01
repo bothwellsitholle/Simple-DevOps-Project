@@ -27,17 +27,15 @@
       # Confirm the new version of Python: 3
       python --version
     ```
-    
-      
 
-1. Install kubectl on ubuntu instance
+1. Install kubectl on ubuntu instance - to manage k8 clusters
    ```sh
    curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
     chmod +x ./kubectl
     sudo mv ./kubectl /usr/local/bin/kubectl
    ```
 
-1. Install kops on ubuntu instance
+1. Install kops on ubuntu instance - to setup k8 clusters on aws
    ```sh
     curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
     chmod +x kops-linux-amd64
@@ -49,12 +47,6 @@
    ```sh
    # Note: If you create IAM user with programmatic access then provide Access keys. Otherwise region information is enough
    aws configure
-   
-   AWS Access Key ID [None]:        
-   AWS Secret Access Key [None]: 
-   Default region name [None]: us-east-2
-   Default output format [None]:
-   
     ```
 
 1. Create a Route53 private hosted zone (you can create Public hosted zone if you have a domain)
@@ -66,30 +58,21 @@
 
 1. create an S3 bucket
    ```sh
-    aws s3 mb s3://bothwell.k8s.valaxy.net
-    or
-    aws s3 mb s3://bill.k8s.valaxy.net
+    aws s3 mb s3://demo.k8s.valaxy.net
    ```
 1. Expose environment variable:
    ```sh
-    export KOPS_STATE_STORE=s3://bothwell.k8s.valaxy.net
-    or
-    export KOPS_STATE_STORE=s3://bill.k8s.valaxy.net
+    export KOPS_STATE_STORE=s3://demo.k8s.valaxy.net
    ```
 
 1. Create sshkeys before creating cluster
    ```sh
-    
-    
-    
-   
+    ssh-keygen
    ```
 
 1. Create kubernetes cluster definitions on S3 bucket
    ```sh
-   kops create cluster --cloud=aws --zones=us-east-2a --name=bothwell.k8s.valaxy.net --dns-zone=valaxy.net --dns private 
-   or
-   kops create cluster --cloud=aws --zones=us-east-2a --name=bill.k8s.valaxy.net --dns-zone=valaxy.net --dns private 
+   kops create cluster --cloud=aws --zones=ap-south-1b --name=demo.k8s.valaxy.net --dns-zone=valaxy.net --dns private 
     ```
 
 1. If you wish to update the cluster worker node sizes use below command 
@@ -99,7 +82,7 @@
 
 1. Create kubernetes cluser
     ```sh
-    kops update cluster bothwell.k8s.valaxy.net --yes
+    kops update cluster demo.k8s.valaxy.net --yes
     ```
 
 1. Validate your cluster
