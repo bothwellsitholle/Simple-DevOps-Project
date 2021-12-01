@@ -11,9 +11,9 @@
     #sudo apt-get install unzip - if you dont have unzip in your system
      Might need to upgrade python use below commands
     ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-    ```
     
-    # Remove python2
+    
+      # Remove python2
       sudo apt purge -y python2.7-minimal
 
       # You already have Python3 but 
@@ -26,6 +26,9 @@
 
       # Confirm the new version of Python: 3
       python --version
+    ```
+    
+      
 
 1. Install kubectl on ubuntu instance
    ```sh
@@ -46,6 +49,12 @@
    ```sh
    # Note: If you create IAM user with programmatic access then provide Access keys. Otherwise region information is enough
    aws configure
+   
+   AWS Access Key ID [None]:        
+   AWS Secret Access Key [None]: 
+   Default region name [None]: us-east-2
+   Default output format [None]:
+   
     ```
 
 1. Create a Route53 private hosted zone (you can create Public hosted zone if you have a domain)
