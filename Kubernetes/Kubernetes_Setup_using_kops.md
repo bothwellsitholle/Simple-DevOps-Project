@@ -1,5 +1,6 @@
 # Setup Kubernetes (K8s) Cluster on AWS
 
+# Alternative: https://github.com/simplilearn-github/kubernetes/blob/master/simplilearn-kops-setup.MD. and https://www.youtube.com/watch?v=zoypdfvcR-0
 
 1. Create Ubuntu EC2 instance
 1. install AWSCLI
